@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Farm Tycoon - UI Template</title>
+    
+    <!-- FRAMEWORKS EXTERNOS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    
+    <!-- IMPORTAÇÃO DO CSS SEPARADO -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="p-2 sm:p-4">
+
+    <!-- ==============================================================
+         SECÇÃO HTML: ESTRUTURA DA INTERFACE (UI)
+         ============================================================== -->
+
+    <!-- CABEÇALHO DE ESTATÍSTICAS -->
+    <header class="header-main">
+        <div class="flex gap-4">
+            <div class="header-stat">
+                <span class="stat-label text-yellow-400">Dinheiro</span>
+                <span id="ui-money" class="stat-value">--</span>
+            </div>
+            <div class="header-stat">
+                <span class="stat-label text-blue-400">Nível</span>
+                <span id="ui-level" class="stat-value">--</span>
+            </div>
+        </div>
+        
+        <div class="xp-container">
+            <div class="xp-info">
+                <span>XP: <span id="ui-xp-current">--</span> / <span id="ui-xp-target">--</span></span>
+                <span>PRÓX: <span id="ui-next-level">--</span></span>
+            </div>
+            <div class="progress-pixel">
+                <div id="ui-xp-bar" class="progress-fill" style="width: 0%;"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="game-layout">
+        
+        <!-- ÁREA DE JOGO: GRID DE LOTES -->
+        <div class="farm-section">
+            <div class="section-header">
+                <h2 class="title-pixel">Fazenda</h2>
+                <button class="pixel-btn">Comprar Lote</button>
+            </div>
+            
+            <div id="farm-grid" class="farm-grid-container">
+                <!-- Exemplo de Lote Pronto -->
+                <div class="plot ready">
+                    <span class="icon-xl">🌾</span>
+                </div>
+                <!-- Exemplo de Lote Vazio -->
+                <div class="plot empty">
+                    <span class="icon-lg opacity-20">🕳️</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SIDEBAR: LOJA E MELHORIAS -->
+        <div class="sidebar">
+            <!-- PAINEL DE SEMENTES -->
+            <section class="pixel-card">
+                <h3 class="card-title">Sementes</h3>
+                <div id="ui-seeds-list" class="item-list">
+                    <div class="sidebar-item selected">
+                        <div class="item-info">
+                            <span class="icon-md">🌾</span>
+                            <div>
+                                <div class="item-name">Trigo</div>
+                                <div class="item-meta">Renda: $12</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PAINEL DE MELHORIAS -->
+            <section class="pixel-card">
+                <h3 class="card-title">Upgrades</h3>
+                <div id="ui-upgrades-list" class="item-list">
+                    <div class="sidebar-item disabled">
+                        <div>
+                            <div class="item-name">Bloqueado</div>
+                            <div class="item-meta">Aguardando API Python</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
